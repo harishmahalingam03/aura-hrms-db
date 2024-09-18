@@ -1,0 +1,37 @@
+INSERT INTO department (id, orgid, userid, department) VALUES ('g3maXCS1Rr', '62cy167i3jf2', 'ty8i5f650nqo', 'Engineering');
+
+
+INSERT INTO m_permission (id, permission) VALUES (1, 'read');
+INSERT INTO m_permission (id, permission) VALUES (2, 'create');
+INSERT INTO m_permission (id, permission) VALUES (3, 'edit');
+INSERT INTO m_permission (id, permission) VALUES (4, 'delete');
+INSERT INTO m_permission (id, permission) VALUES (5, 'full');
+INSERT INTO m_permission (id, permission) VALUES (6, 'adduser');
+INSERT INTO m_permission (id, permission) VALUES (7, 'removeuser');
+
+CREATE UNIQUE INDEX Unique_IdOnPermission ON m_permission( id );
+
+
+INSERT INTO m_module (id, module) VALUES (1, 'employee');
+INSERT INTO m_module (id, module) VALUES (2, 'role');
+INSERT INTO m_module (id, module) VALUES (3, 'department');
+INSERT INTO m_module (id, module) VALUES (4, 'designation');
+INSERT INTO m_module (id, module) VALUES (5, 'attendance');
+INSERT INTO m_module (id, module) VALUES (6, 'leavecycle');
+INSERT INTO m_module (id, module) VALUES (7, 'holiday');
+
+CREATE UNIQUE INDEX Unique_IdOnModule ON m_module( id );
+
+CREATE UNIQUE INDEX UniqueDesignationOrgID ON designation (orgid);
+
+
+CREATE UNIQUE INDEX Unique_ValueOnHoliday ON holiday( orgid, name );
+CREATE UNIQUE INDEX Unique_IdOnHoliday ON holiday( id );
+
+
+
+
+INSERT INTO m_roletype (id, title) VALUES ('797spdmz7m0y', 'standard');
+INSERT INTO m_roletype (id, title) VALUES ('qc7de6rck8wc', 'custom');
+
+CREATE UNIQUE INDEX Unique_OrgIdOnRoleType ON designation( orgid );
