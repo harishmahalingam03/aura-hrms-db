@@ -1,0 +1,33 @@
+version: 0.2
+env:
+  variables:
+    AWS_DEFAULT_REGION: "us-east-1"
+    AWS_ACCOUNT_ID: "270514764245"
+    ECR_REGISTRY: "270514764245.dkr.ecr.us-east-1.amazonaws.com/aura-hrms-db"
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - sudo apt update -y
+      - sudo apt install -y docker.io
+      - docker --version
+      - pip install awscli
+      - aws --version
+  pre_build:
+    commands:
+      - echo "Logging in to Amazon ECR"
+      - echo "$AWS_DEFAULT_REGION"
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | sudo docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo "Building the Docker image"
+      - docker build -t aura-hrms-db .
+      - docker tag aura-hrms-db:latest $ECR_REGISTRY
+  post_build:
+    commands:
+      - echo "Pushing the Docker image"
+      - docker push $ECR_REGISTRY
+artifacts:
+  files:
+    - '**/*'
