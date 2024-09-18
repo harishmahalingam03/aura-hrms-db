@@ -9,8 +9,8 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - sudo apt update -y
-      - sudo apt install -y docker.io
+      - apt update -y
+      - apt install -y docker.io
       - docker --version
       - pip install awscli
       - aws --version
