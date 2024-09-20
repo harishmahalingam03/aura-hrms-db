@@ -24,6 +24,7 @@ if [ -z "$TOKEN" ]; then
 fi
 echo "$TOKEN" | sudo docker login --username AWS --password-stdin 270514764245.dkr.ecr.us-east-1.amazonaws.com
 
+sudo docker rm -f aura-db || true 
 
 docker pull 270514764245.dkr.ecr.us-east-1.amazonaws.com/aura-hrms-db:latest
 
