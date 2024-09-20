@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: 270514764245.dkr.ecr.us-east-1.amazonaws.com/aura-postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: hrms
+    networks:
+      - aura-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  aura-network:
+    driver: overlay
