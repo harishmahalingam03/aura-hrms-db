@@ -1,4 +1,6 @@
-# Creating pipeline for Aura-DB
+# Pipeline for Create, build and deploy Postgres image on the DB instance 
+
+https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines/aura-db-hrms/view?region=us-east-1
 
 for our pipeline we have 3 stages : For code build buildspec.yml and for deploy appspec.yml we need to have these available inside the DB repository
 ~~~
