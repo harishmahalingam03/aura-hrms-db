@@ -5,7 +5,6 @@ set -e
 sudo apt-get update -y
 sudo apt-get install unzip
 
-sudo rm -rf /home/ubuntu/aura-db/* | true
 # To install the AWS CLI, following commands added
 
 #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
