@@ -13,8 +13,9 @@ sudo apt-get install unzip
 #sudo ./aws/install
 
 # Enable Docker service to start on boot
-sudo systemctl start docker
 sudo systemctl enable docker
+sudo systemctl start docker
+
    
 # Log in to AWS ECR
 TOKEN=$(aws ecr get-login-password --region us-east-1)
