@@ -3,7 +3,6 @@ set -e
 
 # Update package index and install docker.io
 sudo apt-get update -y
-sudo apt-get install docker.io -y
 sudo apt-get install unzip
 
 # To install the AWS CLI, following commands added
