@@ -26,7 +26,7 @@ echo "$TOKEN" | sudo docker login --username AWS --password-stdin 270514764245.d
 
 sudo docker rm -f aura-db || true 
 
-sudo docker network rm -f aura-network || true
+#sudo docker network rm -f aura-network || true
 
 docker pull 270514764245.dkr.ecr.us-east-1.amazonaws.com/aura-hrms-db:latest
 
