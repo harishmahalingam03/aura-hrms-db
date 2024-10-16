@@ -11,12 +11,6 @@ sudo apt-get install unzip
 #unzip awscliv2.zip
 #sudo ./aws/install
 
-sudo apt install docker.io
-
-# Enable Docker service to start on boot
-sudo systemctl enable docker
-sudo systemctl start docker
-
 
 # Log in to AWS ECR
 TOKEN=$(aws ecr get-login-password --region us-east-1)
