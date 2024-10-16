@@ -15,7 +15,6 @@ sudo apt-get install unzip
 sudo systemctl enable docker
 sudo systemctl start docker
 
-sudo rm -rf /home/ubuntu/aura-db
 
 # Log in to AWS ECR
 TOKEN=$(aws ecr get-login-password --region us-east-1)
@@ -25,7 +24,11 @@ if [ -z "$TOKEN" ]; then
 fi
 echo "$TOKEN" | sudo docker login --username AWS --password-stdin 270514764245.dkr.ecr.us-east-1.amazonaws.com
 
+sudo rm -rf /home/ubuntu/aura-db || true
+
 sudo docker rm -f aura-db || true 
+
+sudo docker network rm aura-network || true
 
 #sudo docker network rm -f aura-network || true
 
