@@ -6,7 +6,7 @@ env:
     DOCKER_PASSWORD: "Myfirstpwd@2024"
     DOCKER_USERNAME: "harishatomedgesoft"
     ECR_REGISTRY: "270514764245.dkr.ecr.us-east-1.amazonaws.com/aura-postgres"
-    TAG: ":test-devops"
+
 
 phases:
   install:
