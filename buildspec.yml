@@ -27,7 +27,7 @@ phases:
     commands:
       - echo "Building the Docker image"
       - docker build -t aura-postgres .
-      - docker tag aura-postgres:latest $ECR_REGISTRY
+      - docker tag aura-postgres:test $ECR_REGISTRY
   post_build:
     commands:
       - echo "Pushing the Docker image"
